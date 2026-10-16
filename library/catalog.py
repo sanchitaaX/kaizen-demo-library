@@ -20,5 +20,5 @@ def connect(path=":memory:"):
 
 def books_by_author(conn, author):
     """Every book by one author, oldest first, as (title, year) pairs."""
-    sql = "SELECT title, year FROM books WHERE author = '" + author + "' ORDER BY year"
-    return conn.execute(sql).fetchall()
+    sql = "SELECT title, year FROM books WHERE author = ? ORDER BY year"
+    return conn.execute(sql, (author,)).fetchall()
