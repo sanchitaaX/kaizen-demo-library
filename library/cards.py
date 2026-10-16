@@ -2,4 +2,4 @@
 
 
 def reader_card(name, books_out):
-    return f"<div class=card><h2>{name}</h2><p>{books_out} books out</p></div>"
+    return f"<div class=card><h2>{name.replace('<', '&lt;').replace('>', '&gt;')}</h2><p>{books_out} books out</p></div>"
